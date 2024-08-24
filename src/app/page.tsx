@@ -3,6 +3,7 @@
 import View from "../components/Map";
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import ButtonAppBar from "../components/ButtonAppBar";
 
 import { Box, Card, CardContent } from "@mui/material";
 
@@ -37,11 +38,11 @@ export default function HomePage() {
 
       {coords && isGoogleLoaded ? (
         <>
+          <ButtonAppBar />
           <Box sx={{
             margin: '8px',   // 全体のマージン
             padding: '8px',  // 内側の余白
             mx: 'auto', // 横中央寄せ>
-            height: '100%'
           }}
           >
             <Card>
