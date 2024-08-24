@@ -3,15 +3,15 @@
 import View from "../components/Map";
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import ButtonAppBar from "../components/ButtonAppBar";
 
-import { Button, Stack, TableContainer, TextField, Typography } from "@mui/material";
+import { Box, Card, CardContent } from "@mui/material";
 
 export default function HomePage() {
   const [coords, setCoords] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isGoogleLoaded, setIsGoogleLoaded] = useState(false);
-
   const google_map_url = "https://maps.googleapis.com/maps/api/js?key=" + process.env.NEXT_PUBLIC_GOOGLEMAP_API_KEY + "&libraries=places";
-  
+
   useEffect(() => {
     // ユーザーの現在位置を取得
     navigator.geolocation.getCurrentPosition(
@@ -29,8 +29,6 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1>Google Maps with Next.js</h1>
-
       {/* Google Maps APIのスクリプトを読み込む */}
       <Script
         src={google_map_url}
@@ -39,7 +37,21 @@ export default function HomePage() {
       />
 
       {coords && isGoogleLoaded ? (
-        <View coords={coords} className="map-container" />
+        <>
+          <ButtonAppBar />
+          <Box sx={{
+            margin: '8px',   // 全体のマージン
+            padding: '8px',  // 内側の余白
+            mx: 'auto', // 横中央寄せ>
+          }}
+          >
+            <Card>
+              <CardContent>
+                <View coords={coords} className="map-container" />
+              </CardContent>
+            </Card>
+          </Box>
+        </>
       ) : (
         <p>位置情報を取得中です...</p>
       )}
