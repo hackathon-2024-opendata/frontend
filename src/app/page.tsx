@@ -1,9 +1,9 @@
 "use client";
 
-import View from "../components/Map";
+import View from "../features/map/components/Map";
 import { useEffect, useState } from "react";
 import Script from "next/script";
-import ButtonAppBar from "../components/ButtonAppBar";
+import ButtonAppBar from "../components/layouts/ButtonAppBar";
 
 import { Box, Card, CardContent, Grid } from "@mui/material";
 
