@@ -5,6 +5,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { Box, Card, CardContent } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,13 +16,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja" >
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          {children}
+          <Box sx={{ display: "flex"}}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              {children}
+            </Box>
+          </Box>
         </AppRouterCacheProvider>
       </body>
-        <style global jsx>{`
+        {/* <style global jsx>{`
           html,
           body,
           body > div:first-child,
@@ -29,7 +34,7 @@ export default function RootLayout({
           div#__next > div {
             height: 100%;
           }
-        `}</style>
+        `}</style> */}
     </html>
   );
 }

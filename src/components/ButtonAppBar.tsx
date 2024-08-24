@@ -13,7 +13,7 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Google Maps with Next.js
+            三鷹市クーリングシェルター可視化マップ
           </Typography>
         </Toolbar>
       </AppBar>

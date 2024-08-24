@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Script from "next/script";
 import ButtonAppBar from "../components/ButtonAppBar";
 
-import { Box, Card, CardContent } from "@mui/material";
+import { Box, Card, CardContent, Grid } from "@mui/material";
 
 export default function HomePage() {
   const [coords, setCoords] = useState<{ latitude: number; longitude: number } | null>(null);
@@ -51,6 +51,11 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </Box>
+          <Grid container>
+            <Grid item xs={12}>
+              © ボドゲ部ハッカソン支部 2024
+            </Grid>
+          </Grid>
         </>
       ) : (
         <p>位置情報を取得中です...</p>

@@ -82,9 +82,6 @@ const View = (props: Props) => {
   return (
     <div className={props.className}>
       <div className="map" ref={ref} style={{ width: '100%', height: '400px' }} />
-      <p className="addressLabel">
-        現在住所：{addressLabel}
-      </p>
     </div>
   );
 };
