@@ -1,21 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import GetPinsCoolingShelter from "../components/MapPlotPins"
+import GetCoolingShelterList from '../api/GetCoolingShalterList';
 
 interface Props {
   coords: { latitude: number; longitude: number };
   className?: string;
 }
 
-interface PinLocation {
-  name: string,
-  id: number,
-  latitude: number,
-  longitude: number
-}
-
-const View = (props: Props) => {
+const MapComponent = (props: Props) => {
   const [addressLabel, setAddressLabel] = useState('...取得しています');
   const ref = useRef<HTMLDivElement>(null);
 
@@ -51,7 +44,7 @@ const View = (props: Props) => {
     const infoWindow = new google.maps.InfoWindow();
 
     // const pinsCoolingShelter = GetPinsCoolingShelter();
-    GetPinsCoolingShelter().then((pinDatas) => {
+    GetCoolingShelterList().then((pinDatas) => {
       if (pinDatas != undefined){
         for (let count: number = 0; count < pinDatas.length; count++) {
           const pinMarker = new google.maps.Marker({
@@ -86,4 +79,4 @@ const View = (props: Props) => {
   );
 };
 
-export default View;
+export default MapComponent;

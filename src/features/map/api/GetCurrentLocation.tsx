@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-const LocationTracker = () => {
+const GetCurrentLocation = () => {
   const [location, setLocation] = useState({ latitude: null, longitude: null });
   const [error, setError] = useState(null);
 
@@ -45,4 +45,4 @@ const LocationTracker = () => {
   );
 }
 
-export default LocationTracker;
+export default GetCurrentLocation;
