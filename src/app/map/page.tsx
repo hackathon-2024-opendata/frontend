@@ -1,13 +1,13 @@
 "use client";
 
-import MapComponent from "../features/map/components/MapComponent";
+import MapComponent from "../../features/map/components/MapComponent";
 import { useEffect, useState } from "react";
 import Script from "next/script";
-import ButtonAppBar from "../components/layouts/ButtonAppBar";
+import ButtonAppBar from "../../components/layouts/ButtonAppBar";
 
 import { Box, Card, CardContent, Grid } from "@mui/material";
 
-export default function HomePage() {
+export default function MapPage() {
   const [coords, setCoords] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isGoogleLoaded, setIsGoogleLoaded] = useState(false);
   const google_map_url = "https://maps.googleapis.com/maps/api/js?key=" + process.env.NEXT_PUBLIC_GOOGLEMAP_API_KEY + "&libraries=places";
