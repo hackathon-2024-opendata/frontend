@@ -13,10 +13,9 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@googlemaps/react-wrapper": "^1.1.42",
+    "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "@mui/material-nextjs": "^5.16.6",
-    "@types/googlemaps": "^3.43.3",
-    "axios": "^1.7.5",
     "next": "14.2.6",
     "react": "^18",
     "react-dom": "^18"
