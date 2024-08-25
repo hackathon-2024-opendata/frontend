@@ -7,7 +7,6 @@ interface Props {
   coords: { latitude: number; longitude: number };
   className?: string;
 }
-
 const MapComponent = (props: Props) => {
   const [addressLabel, setAddressLabel] = useState('...取得しています');
   const ref = useRef<HTMLDivElement>(null);
