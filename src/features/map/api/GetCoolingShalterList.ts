@@ -18,7 +18,7 @@ const fetchData = async (url: string, headers: HeadersInit) => {
     return data;
 }
 
-const GetPinsCoolingShelter = async () => {
+const GetCoolingShelterList = async () => {
     const urlGetCoolingShelter = "http://localhost:5000/cooling-shelter/locations";
     const headers = {
         'mode': 'cors',
@@ -32,4 +32,4 @@ const GetPinsCoolingShelter = async () => {
     }
 }
 
-export default GetPinsCoolingShelter;
+export default GetCoolingShelterList;

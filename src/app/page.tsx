@@ -1,6 +1,6 @@
 "use client";
 
-import View from "../features/map/components/Map";
+import MapComponent from "../features/map/components/MapComponent";
 import { useEffect, useState } from "react";
 import Script from "next/script";
 import ButtonAppBar from "../components/layouts/ButtonAppBar";
@@ -47,7 +47,7 @@ export default function HomePage() {
           >
             <Card>
               <CardContent>
-                <View coords={coords} className="map-container" />
+                <MapComponent coords={coords} className="map-container" />
               </CardContent>
             </Card>
           </Box>
