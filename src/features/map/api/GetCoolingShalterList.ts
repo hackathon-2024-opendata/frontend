@@ -7,26 +7,20 @@ interface PinLocation {
     longitude: number
 }
 
-const fetchData = async (url: string, headers: HeadersInit) => {
-    const response = await fetch(url);
-    if (!response.ok) {
-        console.error("レスポンス不正");
-        return;
-    }
-    const data: PinLocation[] = await response.json();
-    console.log(data);
-    return data;
-}
-
 const GetCoolingShelterList = async () => {
-    const urlGetCoolingShelter = "http://localhost:5000/cooling-shelter/locations";
+    const urlGetCoolingShelter = "https://louse-wealthy-dassie.ngrok-free.app/cooling-shelter/locations";
     const headers = {
-        'mode': 'cors',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': '1'
     }
     try {
-        const data = await fetchData(urlGetCoolingShelter, headers);
-        return data;
+        const response = await fetch(urlGetCoolingShelter, {headers: headers});
+        if (!response.ok) {
+            console.error("レスポンス不正");
+            return;
+        }
+        const data: PinLocation[] = await response.json();
+            return data;
     } catch (error) {
         console.error(error);
     }

@@ -60,10 +60,15 @@ const MapComponent = (props: Props) => {
             }
           });
           // Add a click listener for each marker, and set up the info window.
+          const pinTitle = pinMarker.getTitle() ?? ""
+          const pinMap = pinMarker.getMap()
+
           pinMarker.addListener("click", () => {
             infoWindow.close();
-            infoWindow.setContent(pinMarker.getTitle());
-            infoWindow.open(pinMarker.getMap(), pinMarker);
+            infoWindow.setContent(pinTitle);
+            if(pinMap){
+              infoWindow.open(pinMap, pinMarker);
+            }
           });
         }
       }
