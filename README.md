@@ -37,3 +37,20 @@ Ok to proceed? (y) y
 ✔ What import alias would you like configured? … @/*
 Creating a new Next.js app in /home/seitoku/frontend.
 ```
+
+## ディレクトリ構成
+
+features構成を採用  
+詳細なディレクトリ構成は以下の記事を参考にした
+* [小さくはじめる Next.js App Router ディレクトリ構成 「featuresでコンポーネントを整理する」](https://qiita.com/miumi/items/359b8a77bbb6f9666950)
+
+```
+├── app          ... ルーティングに関するコンポーネント
+├── features     ... ロジック + コンポーネントをまとめたもの
+│   ├── common   ... 共通部分
+│   └── routes   ... 特定のページで使うもの
+├── components   ... ロジックがない共通コンポーンネント
+├── hooks        ... 共通ロジックの内、React Hooksが「ある」もの
+├── utils        ... 共通ロジックの内、React Hooksが「ない」もの
+└── constants    ... 定数を定義したファイル
+```
